@@ -9,5 +9,10 @@ gem 'mongoid'
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'factory_girl_rails'
+  gem 'fabrication'
+  gem 'spork-rails'
+  gem 'guard'
+  gem 'guard-rspec'
+  gem 'guard-spork'
+  gem 'guard-pow'
 end

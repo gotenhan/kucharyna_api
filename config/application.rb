@@ -63,7 +63,7 @@ module KucharynaApi
     config.assets.enabled = false
 
     config.generators do |g|
-      g.fixture_replacement :factory_girl
+      g.fixture_replacement :fabrication
       config.generators.stylesheets = false
       config.generators.javascripts = false
     end
