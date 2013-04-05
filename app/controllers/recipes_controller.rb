@@ -1,12 +1,16 @@
 class RecipesController < ApplicationController
   def index
-    render json: Recipe.all
+    @recipes = Recipe.all
+    render json: @recipes, serializer: ActiveModel::ArraySerializer
   end
 
   def show
-    id = @parameters[:id]
-    @recipe = Recipe.find_by_id(:id)
+    @recipe = Recipe.find(params[:id])
+    render json: @recipe
+  end
 
-    render json: Recipe
+  def create
+    @recipe = Recipe.create(params)
+    render json: @recipe
   end
 end
