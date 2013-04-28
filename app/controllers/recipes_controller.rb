@@ -10,7 +10,14 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.create(params)
+    @recipe = Recipe.create(params[:id])
+    @recipe.update_attributes(params[:recipe])
+    render json: @recipe
+  end
+
+  def update
+    @recipe = Recipe.find(params[:id])
+    @recipe.update_attributes(params[:recipe])
     render json: @recipe
   end
 end
